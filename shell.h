@@ -97,8 +97,8 @@ typedef struct passinfo
 	int histcount;
 } info_t;
 
-#define INFO_INT \
-{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \ 0, 0, 0}
+#define INFO_INIT \
+{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 0, 0}
 
 /**
 * struct builtin - contains a builtin string and related function.
@@ -115,7 +115,7 @@ typedef struct builtin
 int hsh(info_t *, char **);
 int find_builtin(info_t *);
 void find_cmd(info_t *);
-void fork_cmd(info_T *);
+void fork_cmd(info_t *);
 
 /* toem_parser.c */
 int is_cmd(info_t *, char *);
@@ -123,7 +123,7 @@ char *dup_chars(char *, int, int);
 char *find_path(info_t *, char *, char *);
 
 /* loophsh.c */
-int loophsh(char **)
+int loophsh(char **);
 
 /* toem_errors.c */
 void _eputs(char *);
